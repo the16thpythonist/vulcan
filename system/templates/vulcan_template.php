@@ -6,7 +6,16 @@
  * Time: 15:45
  */
 
-
+/**
+ * This function acts as a html string template, which will insert the title string and the menu item names and their
+ * respective links into the template for the main section of the vulcan page, which contains the slide show and the
+ * overlay menu.
+ * The function returns the html string ti be echo-ed to the client browser.
+ * @param $overlayTitle: The title to be displayed on top of the slide show
+ * @param $menuItemLinkDict: A associative array aka dictionary, which contains the names of the menu items as keys
+ *  and the string links (to be inserted in the href attribute of the a tags)
+ * @return string: The html code to be displayed as string
+ */
 function vulcan_main_section($overlayTitle, $menuItemLinkDict)
 {
     // Defining dynamic variables for the key value pairs in the Dict for the menu items, so that these variables
