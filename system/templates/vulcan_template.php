@@ -59,3 +59,24 @@ function vulcan_main_section($overlayTitle, $menuItemLinkDict)
 
     return $tempString;
 }
+
+
+function vulcan_mission_section($backgroundImageSource, $title, $contentStringFirst, $contentStringSecond)
+{
+    $tempString = "
+<div class='vulcan-section-wrapper' id='mission-section-wrapper'>
+<!-- The background -->
+<div class='background-image-wrapper' id='mission-background-image-wrapper'>
+<img src='$backgroundImageSource' id='background-image-mission'>
+</div>
+<!-- -->
+<div class='text-content-wrapper' id='mission-content-wrapper'>
+<p class='title' id='mission-title'>$title</p>
+<p class='text-content-body' id='mission-content-body-first'>$contentStringFirst</p>
+<p class='text-content-body' id='mission-content-body-second'>$contentStringSecond</p>
+</div>
+</div>
+    ";
+
+    return $tempString;
+}
