@@ -6,7 +6,7 @@
  * Time: 20:54
  */
 $root = $_SERVER['DOCUMENT_ROOT'];
-require_once $root . "config.php";
+require_once $root . "/vulcan/config.php";
 
 // Getting the template file for the vulcan project, that contains all the html templates
 require_once DIR_TEMP . "vulcan_template.php";

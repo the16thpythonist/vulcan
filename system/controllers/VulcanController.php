@@ -19,6 +19,8 @@ class VulcanController extends ControllerBase implements ControllerInterface
     public function __construct($viewClass)
     {
         $this->viewClass = $viewClass;
+
+        $this->createView();
     }
 
     public function createView()
