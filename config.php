@@ -6,7 +6,7 @@
  * Time: 15:51
  */
 
-define('DIR_BASE',      dirname( dirname( __FILE__ ) ) . '/template' . '/');
+define('DIR_BASE',      dirname( dirname( __FILE__ ) ) . '/vulcan' . '/');
 define('DIR_SYSTEM',    DIR_BASE . 'system/');
 
 // The variables defining the paths to the system folders
@@ -28,11 +28,11 @@ define('VIEW_NAVIGATION',   DIR_VIEWS . 'navigation.php');
 define('VIEW_FOOTER',   DIR_VIEWS . 'footer.php');
 
 // The variables defining the URL basis for the linkings internally
-define('URL_BASE', 'http://localhost/feedli/');
+define('URL_BASE', 'http://localhost/vulcan/');
 define('URL_STYLES', URL_BASE . 'src/stylesheets/');
 
 // Defining the variables for the MySQL database access
-define('DB_USERNAME', 'username');
-define('DB_PASSWORD', 'password');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'database name');
