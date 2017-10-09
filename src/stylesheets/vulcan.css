@@ -1,0 +1,22 @@
+/*
+THE MAIN PAGE CONFIGURATION
+this is the stuff, which is needed for the frame of the site, which means setting background picture, main display 
+style, removing the margin of the body etc.
+ */
+body {
+    margin: 0px;
+}
+
+div.page-wrapper {
+    width: 100%;
+}
+
+div.page-content-wrapper {
+    width: 100%;
+}
+
+/*
+THE HEADER
+ */
+
+
