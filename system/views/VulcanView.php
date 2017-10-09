@@ -21,7 +21,16 @@ class VulcanView implements ViewInterface
 
     }
 
-    public function procureMainPageString()
+    public function procureHeader()
+    {
+        $navItemLinkArray = [
+            "hallo" => "",
+            "nein" => ""
+        ];
+        return vulcan_header('', $navItemLinkArray);
+    }
+
+    public function procureMainSectionString()
     {
         $itemLinkArray = [
             "hi" => "",
@@ -34,7 +43,9 @@ class VulcanView implements ViewInterface
 
     public function getString()
     {
-        return $this->procureMainPageString();
+        $header = $this->procureHeader();
+        $mainSection = $this->procureMainSectionString();
+        return $header . $mainSection;
     }
 
 }
