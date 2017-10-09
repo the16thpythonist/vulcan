@@ -7,7 +7,7 @@
  */
 
 $root = $_SERVER['DOCUMENT_ROOT'];
-require_once $root . "/feedli/config.php";
+require_once $root . "/vulcan/config.php";
 
 class ControllerBase
 {

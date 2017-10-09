@@ -6,6 +6,30 @@
  * Time: 15:45
  */
 
+
+function vulcan_header($iconImageSource, $navItemLinkDict)
+{
+    // Assembling the string with the nav elements, which are Link Elements wrapped in their own div
+    $navItemString = "";
+    foreach ($navItemLinkDict as $key => $value) {
+        $navItemString .= "<div class='nav-item-wrapper'>
+<a class='nav-item' id='nav-item-$key' href='$value'>$key</a>
+</div>";
+    }
+
+    $tempString =  "
+<div id='vulcan-header-wrapper' class='header-wrapper'>
+<div id='vulcan-header-content-wrapper'>
+<img src='$iconImageSource'>
+$navItemString
+</div>
+<div id='vulcan-header-separator'></div>
+</div>
+    ";
+
+    return $tempString;
+}
+
 /**
  * This function acts as a html string template, which will insert the title string and the menu item names and their
  * respective links into the template for the main section of the vulcan page, which contains the slide show and the
