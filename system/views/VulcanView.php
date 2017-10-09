@@ -27,7 +27,7 @@ class VulcanView implements ViewInterface
             "hallo" => "",
             "nein" => ""
         ];
-        return vulcan_header('', $navItemLinkArray);
+        return vulcan_header('/vulcan/src/img/logo.png', $navItemLinkArray);
     }
 
     public function procureMainSectionString()

@@ -1,6 +1,15 @@
 /*
+FONTS
+Including new fonts
+ */
+@font-face {
+    font-family: Ubuntu;
+    src: url("../../../vulcan/src/fonts/Ubuntu-Regular.ttf");
+}
+
+/*
 THE MAIN PAGE CONFIGURATION
-this is the stuff, which is needed for the frame of the site, which means setting background picture, main display 
+this is the stuff, which is needed for the frame of the site, which means setting background picture, main display
 style, removing the margin of the body etc.
  */
 body {
@@ -19,4 +28,33 @@ div.page-content-wrapper {
 THE HEADER
  */
 
+div#vulcan-header-wrapper {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+div#vulcan-header-content-wrapper {
+    width: 100%;
+    height: 65px;
+
+    display:flex;
+    flex-direction: row;
+
+    background-color: rgba(56,56,56,0.80);
+}
+
+img#logo-icon-image {
+    height: 80px;
+    width: 200px;
+
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-right: auto;
+}
+
+div.nav-item {
+
+}
 

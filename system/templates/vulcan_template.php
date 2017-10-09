@@ -20,7 +20,7 @@ function vulcan_header($iconImageSource, $navItemLinkDict)
     $tempString =  "
 <div id='vulcan-header-wrapper' class='header-wrapper'>
 <div id='vulcan-header-content-wrapper'>
-<img src='$iconImageSource'>
+<img src='$iconImageSource' id='logo-icon-image'>
 $navItemString
 </div>
 <div id='vulcan-header-separator'></div>
