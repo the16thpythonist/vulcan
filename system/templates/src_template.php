@@ -7,7 +7,7 @@
  */
 
 $root = $_SERVER['DOCUMENT_ROOT'];
-require_once $root . "/dChat/config.php";
+require_once $root . "/vulcan/config.php";
 
 /**
  * This template takes the names of the css stylesheets and the
