@@ -7,6 +7,16 @@ Including new fonts
     src: url("../../../vulcan/src/fonts/Ubuntu-Regular.ttf");
 }
 
+@font-face {
+    font-family: Anton;
+    src: url("../../../vulcan/src/fonts/Anton-Regular.ttf");
+}
+
+@font-face {
+    font-family: OpenSans;
+    src: url("../../../vulcan/src/fonts/OpenSans-Regular.ttf");
+}
+
 /*
 THE MAIN PAGE CONFIGURATION
 this is the stuff, which is needed for the frame of the site, which means setting background picture, main display
@@ -14,6 +24,7 @@ style, removing the margin of the body etc.
  */
 body {
     margin: 0px;
+    background-color: #f7f7f7;
 }
 
 div.page-wrapper {
@@ -34,6 +45,8 @@ div#vulcan-header-wrapper {
     display: flex;
     flex-direction: column;
 
+    z-index: 100;
+
 }
 
 div#vulcan-header-content-wrapper {
@@ -45,9 +58,12 @@ div#vulcan-header-content-wrapper {
     align-items: center;
     justify-content: flex-end;
 
-    z-index: inherit;
+    background: rgba(247,247,247,0.99);
 
-    background: linear-gradient(45deg, rgba(59,59,59,0.98), rgba(40,40,40,0.96));
+    border-style: solid;
+    border-width: 0px;
+    border-bottom-width: 3px;
+    border-color: red;
 }
 
 img#logo-icon-image {
@@ -58,7 +74,7 @@ img#logo-icon-image {
     left: 10px;
     top: 5px;
 
-    z-index: 2;
+    z-index: 100;
 }
 
 div.nav-item-wrapper {
@@ -67,16 +83,25 @@ div.nav-item-wrapper {
 }
 
 div#nav-item-last-wrapper {
-    margin-right: 50px;
+    margin-right: 38%;
 }
 
 a.nav-item {
-    font-family: Ubuntu, sans-serif;
-    font-size: 1.3em;
+    font-family: OpenSans, sans-serif;
+    font-size: 1.2em;
 
-    color: #e1e1e1;
+    color: rgba(195,195,195,0.98);
+
+    padding-top: 10px;
+    padding-bottom: 1px;
 
     text-decoration: none;
+
+    border-style: solid;
+    border-radius: 2px;
+    border-width: 0px;
+    border-bottom-width: 2px;
+    border-color: transparent;
 }
 
 
@@ -87,7 +112,9 @@ the main section contains the slide show and the overlay navigation 'widget'
  */
 
 div#main-section-wrapper {
-    background-color: #1c1c1c;
+    background: url("../../../vulcan/src/img/background1.png");
+    background-color: rgba(57,57,57,0.58);
+    background-size: cover;
 
     position: relative;
 
@@ -97,11 +124,19 @@ div#main-section-wrapper {
 }
 
 div#slide-show-image-wrapper {
-
+    position: relative;
 }
 
 img.slide-image {
     width: 100%;
+}
+
+img#slide-image2, img#slide-image3{
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
 }
 
 div#slide-show-overlay-wrapper {
@@ -110,30 +145,31 @@ div#slide-show-overlay-wrapper {
 
     position: relative;
 
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
 
     z-index: inherit;
 }
 
 button.slide-show-button {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
 
-    font-size: 1.1em;
+    font-size: 1.5em;
 
-    background-color: transparent;
+    background-color: rgba(75,75,75,0.58);
     color: white;
 
-    border-radius: 100%;
-    border-color: rgba(67,67,67,0.40);
+    border: none;
 
 }
 
 div#slide-show-main-overlay-wrapper {
     width: 100%;
 
-    margin: 15px;
+    margin: 25px;
+    margin-right: 15px;
+    margin-left: 15px;
     z-index: inherit;
 
     position: relative;
@@ -142,14 +178,17 @@ div#slide-show-main-overlay-wrapper {
 p#slide-show-overlay-title, p#slide-show-overlay-sub-title {
     position: absolute;
 
-    font-family: Impact, sans-serif;
-    font-size: 1.9em;
+    font-family: Anton, Impact, sans-serif;
+    font-size: 2.3em;
 
     z-index: 2;
 
-    background-color: rgba(255,102,56,0.98);
+    background-color: rgba(230,70,42,0.98);
 
-    color: rgba(255,255,255,0.98);
+    color: white;
+
+    opacity: 0;
+    left: -10px;
 
     padding: 3px;
     padding-left: 6px;
@@ -157,13 +196,11 @@ p#slide-show-overlay-title, p#slide-show-overlay-sub-title {
 }
 
 p#slide-show-overlay-title {
-    left: 40px;
-    top: 30px;
+    top: 10px;
 }
 
 p#slide-show-overlay-sub-title {
-    left: 40px;
-    top: 80px;
+    top: 75px;
 }
 
 div.slide-show-button-wrapper {
@@ -174,7 +211,7 @@ div.slide-show-button-wrapper {
 div#slide-show-overlay-menu-wrapper {
     background-color: white;
 
-    width: 200px;
+    width: 210px;
 
     position: absolute;
     top: 52%;
@@ -185,30 +222,124 @@ a.slide-show-overlay-menu-item {
     font-size: 1.2em;
     font-family: sans-serif;
 
-    color: rgba(225,225,225,0.62);
+    color: rgba(225,225,225,0.75);
+
+    padding: 5px;
 
     text-decoration: none;
+
+    position: absolute;
+    left: 0;
+
+    opacity: 0;
+}
+
+a.slide-show-overlay-menu-item::before {
+    position: absolute;
+
+    content: '';
+
+    width: 0px;
+    height: 0px;
+
+    margin-left: -15px;
+    margin-top: 2px;
+
+    border-left: 9px solid red;
+    border-bottom: 8px solid transparent;
+    border-top: 8px solid transparent;
 }
 
 a#slide-show-overlay-menu-item-first {
     position: absolute;
 
+    font-size: 1.3em;
+
     top: 10px;
-    left: 60px;
 }
 
 a#slide-show-overlay-menu-item-second {
     position: absolute;
 
+    font-size: 1.2em;
+
     top: 72px;
-    left: 40px;
 }
 
 a#slide-show-overlay-menu-item-third {
     position: absolute;
 
+    font-size: 1.1em;
+
     top: 140px;
-    left: 10px;
+}
+
+div.section-separator {
+    position: relative;
+
+    height: 10px;
+    background-color: red;
+}
+
+div.section-separator::after {
+    content: "";
+
+    position: absolute;
+    left: 49%;
+    top: 10px;
+
+    border-left:20px solid transparent;
+    border-right:20px solid transparent;
+    border-top:20px solid red;
+
+    width: 0px;
+    height: 0px;
+}
+
+/*
+THE MISSION SECTION
+ */
+div#mission-section-wrapper {
+
+    height: 800px;
+
+    position: relative;
+}
+
+div#mission-background-image-wrapper {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+
+
+}
+
+img#background-image-mission {
+    height: 800px;
+    width: 750px;
+
+    margin-bottom: -4px;
+}
+
+div#mission-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+p#mission-title {
+    font-size: 3em;
+    font-family: Anton, sans-serif;
+
+    margin-top: 30px;
+
+    align-self: center;
+}
+
+p.text-content-body {
+    margin-left: 30px;
+
+    font-size: 1.1em;
 }
 
 

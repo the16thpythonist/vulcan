@@ -23,6 +23,7 @@ function main_basic($title, $head, $body)
 <!DOCTYPE html>
 <html lang=\"en\">
 <script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js'></script>
+<script src='//code.jquery.com/ui/1.11.1/jquery-ui.js'></script>
 <!-- THE HEAD OF THE HTML DOCUMENT -->
 <head>
 <meta charset='UTF-8'>

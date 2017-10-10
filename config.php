@@ -30,6 +30,7 @@ define('VIEW_FOOTER',   DIR_VIEWS . 'footer.php');
 // The variables defining the URL basis for the linkings internally
 define('URL_BASE', 'http://localhost/vulcan/');
 define('URL_STYLES', URL_BASE . 'src/stylesheets/');
+define('URL_SCRIPTS', URL_BASE . 'src/scripts/');
 
 // Defining the variables for the MySQL database access
 define('DB_USERNAME', 'root');

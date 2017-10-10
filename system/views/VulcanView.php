@@ -24,10 +24,10 @@ class VulcanView implements ViewInterface
     public function procureHeader()
     {
         $navItemLinkArray = [
-            "news" => "",
-            "research" => "",
-            "partners" => "",
-            "contact" => ""
+            "News" => "",
+            "Forschung" => "",
+            "Partner" => "",
+            "Kontakt" => ""
         ];
         return vulcan_header('/vulcan/src/img/logo.png', $navItemLinkArray);
     }
@@ -35,7 +35,7 @@ class VulcanView implements ViewInterface
     public function procureMainSectionString()
     {
         $itemLinkArray = [
-            "Our Mission" => "",
+            "Unsere Mission" => "",
             "Partner" => "",
             "Kontakt/Wir" => "",
         ];
@@ -46,11 +46,20 @@ class VulcanView implements ViewInterface
         return vulcan_main_section($title, $subTitle, $itemLinkArray);
     }
 
+    public function procureMissionSectionString()
+    {
+        $imageSource = '/vulcan/src/img/crates2.png';
+        $title = "Unsere Mission";
+
+        return vulcan_mission_section($imageSource, $title, 'li', 'ty');
+    }
+
     public function getString()
     {
         $header = $this->procureHeader();
         $mainSection = $this->procureMainSectionString();
-        return $header . $mainSection;
+        $missionSection = $this->procureMissionSectionString();
+        return $header . $mainSection . $missionSection;
     }
 
 }

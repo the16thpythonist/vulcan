@@ -70,7 +70,9 @@ function vulcan_main_section($overlayTitle, $overlaySubTitle, $menuItemLinkDict)
 <!-- The main window for the overlay of the slide show -->
 <div class='overlay-pane' id='slide-show-main-overlay-wrapper'>
 <div class='image-wrapper' id='slide-show-image-wrapper'>
-<img src='/vulcan/src/img/background1.png' id='slide-image1' class='slide-image'>
+<img src='/vulcan/src/img/slide1.png' id='slide-image1' class='slide-image'>
+<img src='/vulcan/src/img/slide2.png' id='slide-image2' class='slide-image'>
+<img src='/vulcan/src/img/slide3.png' id='slide-image3' class='slide-image'>
 <!-- Insert the background image here -->
 </div>
 <p id='slide-show-overlay-title'>$overlayTitle</p>
@@ -87,6 +89,7 @@ function vulcan_main_section($overlayTitle, $overlaySubTitle, $menuItemLinkDict)
 <button class='slide-show-button' id='slide-show-button-main-right'><strong>></strong></button>
 </div>
 </div>
+<div class='section-separator'></div>
 </div>
     ";
 
@@ -108,7 +111,9 @@ function vulcan_mission_section($backgroundImageSource, $title, $contentStringFi
 <p class='text-content-body' id='mission-content-body-first'>$contentStringFirst</p>
 <p class='text-content-body' id='mission-content-body-second'>$contentStringSecond</p>
 </div>
+
 </div>
+<div class='section-separator'></div>
     ";
 
     return $tempString;
