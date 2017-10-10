@@ -24,8 +24,10 @@ class VulcanView implements ViewInterface
     public function procureHeader()
     {
         $navItemLinkArray = [
-            "hallo" => "",
-            "nein" => ""
+            "news" => "",
+            "research" => "",
+            "partners" => "",
+            "contact" => ""
         ];
         return vulcan_header('/vulcan/src/img/logo.png', $navItemLinkArray);
     }
@@ -33,12 +35,15 @@ class VulcanView implements ViewInterface
     public function procureMainSectionString()
     {
         $itemLinkArray = [
-            "hi" => "",
-            "hp" => "",
-            "jo" => "",
+            "Our Mission" => "",
+            "Partner" => "",
+            "Kontakt/Wir" => "",
         ];
 
-        return vulcan_main_section("Working?", $itemLinkArray);
+        $title = "Using the thermal energy of volcano eruptions";
+        $subTitle = "to power the future";
+
+        return vulcan_main_section($title, $subTitle, $itemLinkArray);
     }
 
     public function getString()

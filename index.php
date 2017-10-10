@@ -19,7 +19,7 @@ require_once DIR_VIEWS . "VulcanView.php";
 $vulcanController = new VulcanController(VulcanView::class);
 $vulcan = $vulcanController->getViewString();
 
-$head = stylesheet_links(["vulcan"]);
+$head = stylesheet_links(["vulcan"]) . script_links(["vulcan"]);
 
 $html = main_wrapper("vulcan", $head, $vulcan);
 

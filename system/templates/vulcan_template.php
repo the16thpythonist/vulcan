@@ -11,10 +11,17 @@ function vulcan_header($iconImageSource, $navItemLinkDict)
 {
     // Assembling the string with the nav elements, which are Link Elements wrapped in their own div
     $navItemString = "";
+    $count = 1;
     foreach ($navItemLinkDict as $key => $value) {
-        $navItemString .= "<div class='nav-item-wrapper'>
-<a class='nav-item' id='nav-item-$key' href='$value'>$key</a>
+        if ($count === sizeof($navItemLinkDict)){
+            $idString = "nav-item-last";
+        } else {
+            $idString = "nav-item-$key";
+        }
+        $navItemString .= "<div class='nav-item-wrapper' id='$idString-wrapper'>
+<a class='nav-item' id='$idString' href='$value'>$key</a>
 </div>";
+        $count++;
     }
 
     $tempString =  "
@@ -40,7 +47,7 @@ $navItemString
  *  and the string links (to be inserted in the href attribute of the a tags)
  * @return string: The html code to be displayed as string
  */
-function vulcan_main_section($overlayTitle, $menuItemLinkDict)
+function vulcan_main_section($overlayTitle, $overlaySubTitle, $menuItemLinkDict)
 {
     // Defining dynamic variables for the key value pairs in the Dict for the menu items, so that these variables
     // can be set into the tempString directly
@@ -53,19 +60,21 @@ function vulcan_main_section($overlayTitle, $menuItemLinkDict)
 
     $tempString = "
 <div class='vulcan-section-wrapper' id='main-section-wrapper'>
-<div class='image-wrapper' id='slideshow-image-wrapper'>
-<!-- Insert the background image here -->
-</div>
 
 <!-- This is the horizontal wrapper for the overlay of the slide show pictures -->
 <div class='pane-layout' id='slide-show-overlay-wrapper'>
 <!-- This is the left button for the slide show -->
 <div class='slide-show-button-wrapper'>
-<button class='slide-show-button' id='slide-show-button-main-left'></button>
+<button class='slide-show-button' id='slide-show-button-main-left'><strong><</strong></button>
 </div>
 <!-- The main window for the overlay of the slide show -->
-<div class='overlay-pane' id='slide-show-main-overlay-pane'>
+<div class='overlay-pane' id='slide-show-main-overlay-wrapper'>
+<div class='image-wrapper' id='slide-show-image-wrapper'>
+<img src='/vulcan/src/img/background1.png' id='slide-image1' class='slide-image'>
+<!-- Insert the background image here -->
+</div>
 <p id='slide-show-overlay-title'>$overlayTitle</p>
+<p id='slide-show-overlay-sub-title'>$overlaySubTitle</p>
 <!-- The wrapper for the three links, which represent the overlay menu -->
 <div id='slide-show-overlay-menu-wrapper'>
 <a class='slide-show-overlay-menu-item' id='slide-show-overlay-menu-item-first' href='$menuItemLink1'>$menuItemName1</a>
@@ -75,7 +84,7 @@ function vulcan_main_section($overlayTitle, $menuItemLinkDict)
 </div>
 <!-- This is the right button for the slide show-->
 <div class='slide-show-button-wrapper' id='slide-show-button-wrapper-left'>
-<button class='slide-show-button' id='slide-show-button-main-right'></button>
+<button class='slide-show-button' id='slide-show-button-main-right'><strong>></strong></button>
 </div>
 </div>
 </div>

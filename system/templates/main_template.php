@@ -22,6 +22,7 @@ function main_basic($title, $head, $body)
     $tempString = "
 <!DOCTYPE html>
 <html lang=\"en\">
+<script src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js'></script>
 <!-- THE HEAD OF THE HTML DOCUMENT -->
 <head>
 <meta charset='UTF-8'>
